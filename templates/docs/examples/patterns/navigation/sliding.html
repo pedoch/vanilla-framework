@@ -18,7 +18,7 @@
       <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
       <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
     </div>
-    <nav class="p-navigation__nav" id="main-nav" aria-label="Example main">
+    <nav class="p-navigation__nav" data-level="1" id="main-nav" aria-label="Example main">
       <ul class="p-navigation__items">
         <li class="p-navigation__item is-selected">
           <a class="p-navigation__link" href="#">Products</a>
@@ -29,11 +29,11 @@
         <li class="p-navigation__item">
           <a class="p-navigation__link" href="#">Partners</a>
         </li>
-        <li class="p-navigation__item--dropdown-toggle" id="link-1">
+        <li class="p-navigation__item--dropdown-toggle" data-parent="main-nav" id="link-1">
           <button href="#link-1-menu" aria-controls="link-1-menu" class="p-navigation__link">
             LXD
           </button>
-          <ul class="p-navigation__dropdown" id="link-1-menu" aria-hidden="true">
+          <ul class="p-navigation__dropdown" data-level="2" id="link-1-menu" aria-hidden="true">
             <li class="p-navigation__item--dropdown-toggle is-back" id="link-1">
               <button href="#link-1-menu" aria-controls="link-1-menu" class="p-navigation__link">
                 Back
@@ -56,11 +56,11 @@
             </li>
           </ul>
         </li>
-        <li class="p-navigation__item--dropdown-toggle" id="link-2">
+        <li class="p-navigation__item--dropdown-toggle" data-parent="main-nav" id="link-2">
           <button href="#link-2-menu" aria-controls="link-2-menu" class="p-navigation__link">
             LXCFS
           </button>
-          <ul class="p-navigation__dropdown" id="link-2-menu" aria-hidden="false">
+          <ul class="p-navigation__dropdown" data-level="2" id="link-2-menu" aria-hidden="false">
             <li class="p-navigation__item--dropdown-toggle is-back" id="link-2">
               <button href="#link-2-menu" aria-controls="link-2-menu" class="p-navigation__link">
                 Back
@@ -75,11 +75,11 @@
             <li>
               <a href="#" class="p-navigation__dropdown-item">Getting started</a>
             </li>
-            <li class="p-navigation__item--dropdown-toggle" id="link-4">
+            <li class="p-navigation__item--dropdown-toggle" data-parent="link-2" id="link-4">
               <button href="#link-4-menu" aria-controls="link-4-menu" class="p-navigation__link">
                 Nested Layer
               </button>
-              <ul class="p-navigation__dropdown" id="link-4-menu" aria-hidden="false">
+              <ul class="p-navigation__dropdown" data-level="3" id="link-4-menu" aria-hidden="false">
                 <li class="p-navigation__item--dropdown-toggle is-back" id="link-4">
                   <button href="#link-4-menu" aria-controls="link-4-menu" class="p-navigation__link">
                     Back
@@ -93,27 +93,6 @@
                 </li>
                 <li>
                   <a href="#" class="p-navigation__dropdown-item">Getting started</a>
-                </li>
-                <li class="p-navigation__item--dropdown-toggle" id="link-5">
-                  <button href="#link-5-menu" aria-controls="link-5-menu" class="p-navigation__link">
-                    Another Nested Layer
-                  </button>
-                  <ul class="p-navigation__dropdown" id="link-5-menu" aria-hidden="false">
-                    <li class="p-navigation__item--dropdown-toggle is-back" id="link-5">
-                      <button href="#link-5-menu" aria-controls="link-5-menu" class="p-navigation__link">
-                        Back
-                      </button>
-                    </li>
-                    <li>
-                      <a href="#" class="p-navigation__dropdown-item">Introduction</a>
-                    </li>
-                    <li>
-                      <a href="#" class="p-navigation__dropdown-item">News</a>
-                    </li>
-                    <li>
-                      <a href="#" class="p-navigation__dropdown-item">Getting started</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
             </li>
@@ -140,6 +119,12 @@
     </nav>
   </div>
 </header>
+
+<style>
+  body{
+    margin: 0;
+  }
+</style>
 
 <script>
   {% include 'docs/examples/patterns/navigation/_script-sliding.js' %}

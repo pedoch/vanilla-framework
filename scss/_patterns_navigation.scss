@@ -94,14 +94,10 @@ $spv-navigation-logo-bottom-position: 0.125rem; // 2px when 1rem is 16px
   }
 
   %navigation-slide {
-    @include vf-transition(transform);
-
     height: calc(100vh - $navigation-logo-banner-height);
     overflow-y: auto;
-    position: absolute;
-    top: $navigation-logo-banner-height;
     transform: translateX(100vw);
-    width: 100%;
+    width: 100vw;
     z-index: 15;
   }
 
@@ -683,10 +679,39 @@ $spv-navigation-logo-bottom-position: 0.125rem; // 2px when 1rem is 16px
       overflow: visible;
     }
 
+    .p-navigation__window {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      width: 100vw;
+
+      @media (min-width: $breakpoint-navigation-threshold) {
+        height: auto;
+        margin-right: map-get($grid-margin-widths, default);
+        overflow: visible;
+        width: 100%;
+      }
+    }
+
+    .p-navigation__pane {
+      display: flex;
+      height: 100vh;
+      position: absolute;
+      width: auto;
+
+      @media (min-width: $breakpoint-navigation-threshold) {
+        height: auto;
+        overflow: visible;
+      }
+    }
+
     // initialise navigation nav as sliding nav on smaller screens
     .p-navigation__nav {
       @extend %navigation-slide;
+
       overflow-x: hidden;
+      transform: translateX(0);
 
       // reset navigastion nav to default on larger screens
       @media (min-width: $breakpoint-navigation-threshold) {
@@ -694,11 +719,9 @@ $spv-navigation-logo-bottom-position: 0.125rem; // 2px when 1rem is 16px
         flex-direction: row;
         height: auto;
         justify-content: space-between;
-        margin-right: map-get($grid-margin-widths, default);
         overflow-x: visible;
         overflow-y: visible;
         position: static;
-        transform: translateX(0);
         width: 100%;
       }
     }
@@ -717,6 +740,20 @@ $spv-navigation-logo-bottom-position: 0.125rem; // 2px when 1rem is 16px
       .p-navigation__nav {
         transform: translateX(0);
       }
+    }
+
+    // specify how much off screen the navigation nav/dropdown should be
+    // based on the level in the navigation
+    [data-level='1'] {
+      transform: translateX(0);
+    }
+
+    [data-level='2'] {
+      transform: translateX(100vw);
+    }
+
+    [data-level='3'] {
+      transform: translateX(200vw);
     }
 
     // slide parent off screen when child is active
