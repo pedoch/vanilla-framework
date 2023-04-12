@@ -5,7 +5,7 @@ const buildOptions = {
   logLevel: 'info',
   minify: true,
   sourcemap: true,
-  outdir: './js',
+  outdir: '.',
   target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
 };
 
