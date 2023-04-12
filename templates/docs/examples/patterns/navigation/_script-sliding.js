@@ -119,7 +119,7 @@ var throttle = function (fn, delay) {
   };
 };
 
-function initNavDropdowns() {
+export function initNavDropdowns() {
   const toggleClasses = ['.p-navigation__item--dropdown-toggle', '.p-navigation__item--dropdown-close'];
 
   const navigation = document.querySelector('.p-navigation');
@@ -202,6 +202,6 @@ function initNavDropdowns() {
 
 initVanillaFramework();
 
-window.vanillaFramework.slidingNav = (containerClass) => {
-  initNavDropdowns(containerClass);
+window.vanillaFramework.slidingNav = () => {
+  initNavDropdowns();
 };

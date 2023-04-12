@@ -127,8 +127,8 @@
   body { margin: 0; }
 </style>
 
-<script src="{{ versioned_static('build/js/out/sliding-navigation-cjs.js') }}"></script>
-<script>
-  vanillaFramework.slidingNav('.p-navigation__item--dropdown-toggle');
+<script type="module">
+  import {initNavDropdowns} from '/build/js/out/sliding-navigation.js';
+  initNavDropdowns();
 </script>
 {% endblock %}
