@@ -51,7 +51,7 @@
   "files": [
     "_index.scss",
     "/scss",
-    "/js",
+    "index.js",
     "!/scss/docs",
     "!/scss/standalone"
   ],
