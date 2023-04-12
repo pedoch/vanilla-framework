@@ -127,9 +127,8 @@
   body { margin: 0; }
 </style>
 
-<script>
-  {% include 'docs/examples/patterns/navigation/_script-sliding.js' %}
-
-  initNavDropdowns()
+<script type="module">
+  import {initNavDropdowns} from '/js/index.js';
+  initNavDropdowns();
 </script>
 {% endblock %}
