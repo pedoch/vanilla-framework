@@ -17,10 +17,3 @@ build({
   entryPoints: [entryPoint],
   entryNames: 'index',
 });
-
-build({
-  ...buildOptions,
-  format: 'cjs',
-  entryPoints: [entryPoint],
-  entryNames: `index-cjs`,
-});

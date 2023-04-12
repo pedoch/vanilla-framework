@@ -1,5 +1,3 @@
-import {initVanillaFramework} from '../../../../../scripts/utils.js';
-
 function toggleDropdown(toggle, open) {
   let parentElement;
 
@@ -199,9 +197,3 @@ export function initNavDropdowns() {
     }, 10)
   );
 }
-
-initVanillaFramework();
-
-window.vanillaFramework.slidingNav = () => {
-  initNavDropdowns();
-};
